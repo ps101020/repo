@@ -1,0 +1,43 @@
+   *{margin:0;
+    }
+  html,  body{min-width: 202px;}
+         header {background-color: #1BABAC; display:absolute; display:flex min-width:430px background-attachment: fixed;
+    background-repeat:no-repeat;
+background-position:center center;
+       width:100v; height:112px;}
+    h1 {text-align:rigth; color: white; position:relative; font-size:45px; z-index:1}
+    .dvft { width: 250px; top:0px; px;z-index:0; position: absolute; 
+  right: 0px; float: rigth;}
+#container {display: relative; width:100%
+} h2 {text-align:center; color: white; font-size: 40px; position:relative; z-index:1;}
+  nav { background: linear-gradient(60deg, #1BABAC, #9b6aff,#1BABAC) ; background-attachment: fixed;
+  position:relative; float:rigth;  }
+  a {margin-left: 5px; text-decoration:none;
+ text-align: rigth; float: right;
+   color: white;}
+
+  a:hover{
+  background-color:#1BABAC;  transition-duration: .5s;
+    
+    text-transform:uppercase;
+    }
+    nav{display: flex;}
+h3 {text-align: center;  font-family: Helvetica;
+ text-justify: center;}
+p {text-justify: center; margin:10px; }
+.dvtext {
+    background-image: linear-gradient(60deg, #1BABAC, #9b6aff,#1BABAC); margin: 10px; border-radius: 20px; padding:5px; 
+}
+ul {
+    background-color: whitesmoke; color: blueviolet;
+}
+
+
+.alist {color: blue;}
+button {margin: 5px; padding:20px; width: 120px;
+}
+footer {background-color: #1BABAC; display: flex; aling-intems: center; 
+}
+.nt {text-align: center; margin: auto;}
+form {width: 80%; margin: auto;}
+input {margin 5px;}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>site demonstrativo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="aulas de matemática, empreendedorismo">
+	  <meta name="keywords" content="matemática,  empreendedorismo">
+	 <link rel="shortcut icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="../style/style.css">
+
+   <style>
+       body {
+       background: linear-gradient(90deg,purple, cyan, #1BABAC,purple);
+background-attachment:  fixed;
+          }
+      header {background-color:#1BABAC;}
+      legend {color:black;}
+      h1 {color: white;}
+      header{background-color:black; padding:20px; }
+        form {display:flex; aling-intems:center}
+       input#cad {
+       margin-left:38.8%;   }     
+       form {
+         
+           
+       }          
+    </style>
+    <script>
+              function naoTenho(){
+           let fild1 =   document.querySelector(".fild1");
+           fild1.hidden=false;
+            
+            
+                                   }
+               
+               function cadastrar(){
+        if(document.querySelector("input").value ===""){alert("não é permitido campo vazio")}       
+               else{
+               alert("cadastro realizado!!");
+             var cadInputA = document.querySelector("#cadInputA").value;
+                   
+        var cadInputB = document.querySelector("#cadInputB").value;   
+  
+   var dados = JSON.parse(localStorage.getItem('registro'));
+     
+   if(dados==null){localStorage.setItem('registro','[]');
+  dados = []; 
+   }
+   var auxRegist = {
+   nome: document.querySelector("#cadInputA").value,
+   senha: document.querySelector("#cadInputB").value}
+     
+     dados.push(auxRegist);
+     
+     localStorage.setItem('registro', JSON.stringify(dados)) ;
+     
+  console.log(localStorage.getItem('registro'))
+     
+   
+    }
+    
+    }
+   function acessar() {
+   
+                 if(document.querySelector(".cadInputC").value=="" && document.querySelector(".cadInputD").value=="") {alert("campo vazio")}
+   
+   else {
+   
+   
+   // ACESSAR É MAS FÁCIL, porém exige atenção. 
+   /*PASSO1# criar uma let com uma array vazia*/
+
+ var dados2 = []; 
+   
+   
+  /*PASSO2# Criar uma let com objeto q ira conter os registros. {chave:"vazio"}*/
+  
+     var auxRegist2 = {
+   nome: "",
+   senha: ""  }
+   
+     /*PASSO3# variavel.push(variavel2) ou seja [].,push({})*/
+     
+     dados2.push(auxRegist2);
+    
+    
+    /*PASSO 4 # VARIAVEL UM VAI RECEBER OS REGISTROS DO LOCALSTORAGE.getItem('registro')*/
+    
+    
+   dados2 =
+     JSON.parse(localStorage.getItem('registro'));
+ 
+    /*até aqui praticamente apenas repetimos 3 passos da function cadastrar, o passoo 4 vai precuisar do metodo forEach(metodo que percorre valores de array.
+ 
+ variável1.forEach((item) => {no comando havera um if que analisará se o valor do input de acessoserá igual o item dos itens do localStorage q dioui passado a essa varuiavel,  se opassar nio if oa variavel 2 de objetio de acesso vai receber a chave: e item.valor dolouo registro desejado})*/
+ 
+ dados2.forEach((item) => {
+     if(document.querySelector(".cadInputC").value == item.nome && document.querySelector(".cadInputD").value == item.senha) {
+              auxRegist2 = {nome: item.nome,
+              senha: item.senha}
+            }
+ } )
+ 
+ /* até aqui tudo já deu certo,  é so fazer o uif else de acesso liberado e acesso negado caso ios valores digitados nio inputB, nao seham emcotrados no localStorage,
+ lembre de inoedir acesso para campo vazio
+ 
+  */
+
+ 
+ if(document.querySelector(".cadInputC").value == auxRegist2.nome
+  && document.querySelector(".cadInputD").value == auxRegist2.senha){alert("acesso liberado!!")
+  
+ window.open("https://instagram.com/davyfreytas?igshid=YmMyMTA2M2Y=")
+  }
+ 
+ 
+ else{alert("acesso negado!! crie um  cadastro")}
+ 
+      }
+      }
+               
+    </script>
+</head>
+<body>
+       <header>
+           <h1>🤓💻📚📝</h1>
+           <h2>
+               SALA VIP
+           </h2>
+           
+   
+    </header>
+         <nav>
+         
+             <a href="../index.html">📚inicio</a>
+             <a href="vip.html">🔑área vip</a>
+             <a href="   https://api.whatsapp.com/send?phone=556581180746">📱📲contato</a>
+     
+             <a class="sair" href="https://www.google.com/">❎️sair</a>
+         
+         
+        </nav> 
+        
+   
+ 
+        
+    </form>
+       <form>
+       <fieldset class="fild1" hidden>
+        <legend >crie seu cadastro</legend>
+        <label> 🤓 </label>  
+               <input id="cadInputA" type="text" placeholder=" usuário" value="" minlength="4" required><br>
+               <label> 🔑 </label><input id="cadInputB" type="password" placeholder="senha" minlength="4" value="" required><br>
+               <input id="cad" type="submit" role="alert" value="cadastrar" onclick="cadastrar()">
+          
+       </fieldset> 
+        
+    </form>
+    <hr>
+      <form>
+       <fieldset class="fild2">
+        <legend>painel de acesso</legend>
+        <label> 🤓 </label>  
+               <input class="cadInputC"type="text" placeholder=" usuário" ><br>
+               <label> 🔑 </label><input type="password" class="cadInputD"placeholder="senha"><br>
+               <input id="cad" type="submit" value="acessar" onclick="acessar()">
+         
+          
+       </fieldset> 
+           <input type="button" value="não tenho cadastro" class="cad" onclick="naoTenho()">
+               
+  
+</body>
+
+<script src="../script/script.js"></script>
+</html>
